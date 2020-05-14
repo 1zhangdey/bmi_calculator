@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import 'main.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,10 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Container(
         color: Color(0xFF1D1E33),
+        margin: EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        ),
         height: 200,
         width: 170,
       ),
