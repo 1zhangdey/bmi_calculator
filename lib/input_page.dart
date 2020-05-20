@@ -52,20 +52,17 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({
-    Key key,
-  }) : super(key: key);
+  ReusableCard({this.color});
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15),
+      margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Color(0xFF1D1E33),
         borderRadius: BorderRadius.circular(10),
       ),
-      height: 200,
-      width: 170,
     );
   }
 }
