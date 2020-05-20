@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 
 const darkbluecolor = 0xFF1D1E33;
-const pinkcolor =0xFFEB1555;
+const pinkcolor = 0xFFEB1555;
 
 class InputPage extends StatefulWidget {
   @override
@@ -25,7 +26,16 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    cardChild: Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: ReusableCard(),
@@ -37,22 +47,22 @@ class _InputPageState extends State<InputPage> {
             child: ReusableCard(),
           ),
           Expanded(
-              child: Row(
-            children: [
-              Expanded(
-                child: ReusableCard(),
-              ),
-              Expanded(
-                child: ReusableCard(),
-              ),
-            ],
-          ),),
-          Container(
-            color: Color(pinkcolor),
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 10),
-            height: 80
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(),
+                ),
+                Expanded(
+                  child: ReusableCard(),
+                ),
+              ],
+            ),
           ),
+          Container(
+              color: Color(pinkcolor),
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 10),
+              height: 80),
         ],
       ),
     );
