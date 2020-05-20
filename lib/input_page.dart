@@ -49,6 +49,7 @@ class _InputPageState extends State<InputPage> {
             color: Color(0xFFEB1555),
             width: double.infinity,
             margin: EdgeInsets.only(top: 10),
+            height: 80,
           ),
         ],
       ),
