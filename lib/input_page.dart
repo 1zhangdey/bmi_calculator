@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
-
 import 'main.dart';
 import 'package:flutter/material.dart';
+
+const darkbluecolor = 0xFF1D1E33;
+const pinkcolor =0xFFEB1555;
 
 class InputPage extends StatefulWidget {
   @override
@@ -46,10 +48,10 @@ class _InputPageState extends State<InputPage> {
             ],
           ),),
           Container(
-            color: Color(0xFFEB1555),
+            color: Color(pinkcolor),
             width: double.infinity,
             margin: EdgeInsets.only(top: 10),
-            height: 80,
+            height: 80
           ),
         ],
       ),
@@ -66,7 +68,7 @@ class ReusableCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xFF1D1E33),
+        color: Color(darkbluecolor),
         borderRadius: BorderRadius.circular(10),
       ),
     );
