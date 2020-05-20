@@ -60,12 +60,14 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({this.color});
+  ReusableCard({this.color, this.cardChild});
   final Color color;
+  final Widget cardChild;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Color(darkbluecolor),
