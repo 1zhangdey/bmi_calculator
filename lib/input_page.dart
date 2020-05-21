@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
+import 'widgets.dart';
 
-const darkbluecolor = 0xFF1D1E33;
-const pinkcolor = 0xFFEB1555;
 
 class InputPage extends StatefulWidget {
   @override
@@ -27,33 +26,16 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    cardChild: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            FontAwesomeIcons.mars,
-                            size: 80,
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          SizedBox(
-                            child: Text(
-                              "Male",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Color(0xFF8D8E98),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    cardChild: buildContext(
+                      text: "Male",
+                      icon: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    cardChild: buildContext(text: "Female",icon: FontAwesomeIcons.venus,),
+                  ),
                 ),
               ],
             ),
@@ -79,24 +61,6 @@ class _InputPageState extends State<InputPage> {
               margin: EdgeInsets.only(top: 10),
               height: 80),
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  ReusableCard({this.color, this.cardChild});
-  final Color color;
-  final Widget cardChild;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Color(darkbluecolor),
-        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
