@@ -25,10 +25,17 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    cardChild: buildContext(
-                      text: "Male",
-                      icon: FontAwesomeIcons.mars,
+                  child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        
+                      });
+                    },
+                    child: ReusableCard(
+                      cardChild: buildContext(
+                        text: "Male",
+                        icon: FontAwesomeIcons.mars,
+                      ),
                     ),
                   ),
                 ),
