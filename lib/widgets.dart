@@ -5,6 +5,11 @@ const unActiveCardColor = Color(0xFF111328);
 const activeCardColor = Color(0xFF1D1E33);
 const pinkcolor = Color(0xFFEB1555);
 
+enum Gender{
+  male,
+  female,
+}
+
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.color, this.cardChild});
   Color color;
@@ -29,7 +34,6 @@ class buildContext extends StatelessWidget {
   buildContext({this.text, this.icon});
   final IconData icon;
   final String text;
-
   @override
   Widget build(BuildContext context) {
     return Column(
