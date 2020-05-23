@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'main.dart';
 import 'package:flutter/material.dart';
 import 'widgets.dart';
 
@@ -10,7 +9,23 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 
+
+
 class _InputPageState extends State<InputPage> {
+  Color malecardcolor =  unActiveCardColor;
+  Color femalecardcolor = unActiveCardColor;
+
+  void updateColor (int gender){
+    if (gender == 1){
+      if(malecardcolor == unActiveCardColor){
+        malecardcolor = activeCardColor;
+      }
+      else{
+        malecardcolor = unActiveCardColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +43,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: (){
                       setState(() {
-                        
+                        updateColor(1);
                       });
                     },
                     child: ReusableCard(
+                      color: malecardcolor,
                       cardChild: buildContext(
                         text: "Male",
                         icon: FontAwesomeIcons.mars,
@@ -40,30 +56,38 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    cardChild: buildContext(text: "Female",icon: FontAwesomeIcons.venus,),
+                  child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        updateColor(2);
+                      });
+                    },
+                    child: ReusableCard(
+                      color: femalecardcolor,
+                      cardChild: buildContext(text: "Female",icon: FontAwesomeIcons.venus,),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(),
+            child: ReusableCard(color: unActiveCardColor,),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(color: unActiveCardColor,),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(color: unActiveCardColor,),
                 ),
               ],
             ),
           ),
           Container(
-              color: Color(pinkcolor),
+              color: pinkcolor,
               width: double.infinity,
               margin: EdgeInsets.only(top: 10),
               height: 80),

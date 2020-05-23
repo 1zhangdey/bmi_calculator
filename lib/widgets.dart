@@ -1,13 +1,13 @@
-import 'main.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'input_page.dart';
 
-const darkbluecolor = 0xFF1D1E33;
-const pinkcolor = 0xFFEB1555;
+const unActiveCardColor = Color(0xFF111328);
+const activeCardColor = Color(0xFF1D1E33);
+const pinkcolor = Color(0xFFEB1555);
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.color, this.cardChild});
-  final Color color;
+  Color color;
   final Widget cardChild;
 
   @override
@@ -16,7 +16,7 @@ class ReusableCard extends StatelessWidget {
       child: cardChild,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(darkbluecolor),
+        color: color,
         borderRadius: BorderRadius.circular(10),
       ),
     );
