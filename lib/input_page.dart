@@ -3,19 +3,22 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'widgets.dart';
 
-
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  Color malecardcolor =  unActiveCardColor;
+  Color malecardcolor = unActiveCardColor;
   Color femalecardcolor = unActiveCardColor;
 
-  void updateColor (Gender gender){
-    gender == Gender.male ? malecardcolor = activeCardColor : malecardcolor = unActiveCardColor;
-    gender == Gender.female ? femalecardcolor = activeCardColor : femalecardcolor = unActiveCardColor;
+  void updateColor(Gender gender) {
+    gender == Gender.male
+        ? malecardcolor = activeCardColor
+        : malecardcolor = unActiveCardColor;
+    gender == Gender.female
+        ? femalecardcolor = activeCardColor
+        : femalecardcolor = unActiveCardColor;
   }
 
   @override
@@ -32,31 +35,32 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
+                  child: ReusableCard(
+                    onPressed: () {
                       setState(() {
                         updateColor(Gender.male);
                       });
                     },
-                    child: ReusableCard(
-                      color: malecardcolor,
-                      cardChild: buildContext(
-                        text: "Male",
-                        icon: FontAwesomeIcons.mars,
-                      ),
+                    color: malecardcolor,
+                    cardChild: buildContext(
+                      text: "Male",
+                      icon: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        updateColor(Gender.female);
-                      });
+                  child: ReusableCard(
+                    onPressed: () {
+                      setState(
+                        () {
+                          updateColor(Gender.female);
+                        },
+                      );
                     },
-                    child: ReusableCard(
-                      color: femalecardcolor,
-                      cardChild: buildContext(text: "Female",icon: FontAwesomeIcons.venus,),
+                    color: femalecardcolor,
+                    cardChild: buildContext(
+                      text: "Female",
+                      icon: FontAwesomeIcons.venus,
                     ),
                   ),
                 ),
@@ -64,16 +68,22 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: ReusableCard(color: unActiveCardColor,),
+            child: ReusableCard(
+              color: unActiveCardColor,
+            ),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(color: unActiveCardColor,),
+                  child: ReusableCard(
+                    color: unActiveCardColor,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(color: unActiveCardColor,),
+                  child: ReusableCard(
+                    color: unActiveCardColor,
+                  ),
                 ),
               ],
             ),
