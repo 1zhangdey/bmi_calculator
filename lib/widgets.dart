@@ -54,7 +54,6 @@ class buildContext extends StatelessWidget {
             style: labelTextStyle
             ),
           ),
-        ),
       ],
     );
   }

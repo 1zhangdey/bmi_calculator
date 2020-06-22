@@ -31,6 +31,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -76,6 +77,17 @@ class _InputPageState extends State<InputPage> {
                   Text(
                     "Height",
                     style: labelTextStyle,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "180",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 50,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
