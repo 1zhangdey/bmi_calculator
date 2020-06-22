@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'widgets.dart';
+import 'constants.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -70,6 +71,14 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               color: unActiveCardColor,
+              cardChild: Column(
+                children: [
+                  Text(
+                    "Height",
+                    style: labelTextStyle,
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(

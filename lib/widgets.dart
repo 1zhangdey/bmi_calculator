@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'input_page.dart';
+import "constants.dart";
 
-const unActiveCardColor = Color(0xFF111328);
-const activeCardColor = Color(0xFF1D1E33);
-const pinkcolor = Color(0xFFEB1555);
 
 enum Gender{
   male,
@@ -54,9 +51,7 @@ class buildContext extends StatelessWidget {
         SizedBox(
           child: Text(
             text,
-            style: TextStyle(
-              fontSize: 18,
-              color: Color(0xFF8D8E98),
+            style: labelTextStyle
             ),
           ),
         ),
