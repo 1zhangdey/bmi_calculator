@@ -7,3 +7,8 @@ const labelTextStyle = TextStyle(
   color: Color(0xFF8D8E98),
   fontSize: 18,
 );
+
+const numberTextStyle = TextStyle(
+  fontWeight: FontWeight.w500,
+  fontSize: 50,
+);
