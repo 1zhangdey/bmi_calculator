@@ -10,17 +10,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color malecardcolor = unActiveCardColor;
-  Color femalecardcolor = unActiveCardColor;
-
-  void updateColor(Gender gender) {
-    gender == Gender.male
-        ? malecardcolor = activeCardColor
-        : malecardcolor = unActiveCardColor;
-    gender == Gender.female
-        ? femalecardcolor = activeCardColor
-        : femalecardcolor = unActiveCardColor;
-  }
+  int height = 160;
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +75,7 @@ class _InputPageState extends State<InputPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "180",
+                        height.toString(),
                         style: numberTextStyle,
                       ),
                       Text(
@@ -93,6 +83,18 @@ class _InputPageState extends State<InputPage> {
                         style: labelTextStyle,
                       ),
                     ],
+                  ),
+                  Slider(
+                  value: height.toDouble(),
+                    max: 200,
+                    min: 100,
+                    activeColor: Color(0xFFEB1555),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue){
+                    setState(() {
+                      height = newValue.toInt();
+                    });
+                    },
                   ),
                 ],
               ),
