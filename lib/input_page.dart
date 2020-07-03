@@ -126,7 +126,21 @@ class _InputPageState extends State<InputPage> {
                         Text(
                           weight.toString(),
                           style: numberTextStyle,
-                        )
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -146,6 +160,18 @@ class _InputPageState extends State<InputPage> {
               height: 80),
         ],
       ),
+    );
+  }
+}
+
+
+class RoundIconButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
+      elevation: 10,
     );
   }
 }
