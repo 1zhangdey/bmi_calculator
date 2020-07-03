@@ -11,6 +11,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   int height = 160;
+  int weight = 150;
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +122,10 @@ class _InputPageState extends State<InputPage> {
                         Text(
                           "Weight",
                           style: labelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: numberTextStyle,
                         )
                       ],
                     ),
