@@ -115,6 +115,15 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: unActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Weight",
+                          style: labelTextStyle,
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
