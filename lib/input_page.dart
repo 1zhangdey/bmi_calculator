@@ -130,15 +130,11 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(
-
-                            ),
+                            RoundIconButton(),
                             SizedBox(
                               width: 10,
                             ),
-                            RoundIconButton(
-
-                            ),
+                            RoundIconButton(),
                           ],
                         ),
                       ],
@@ -164,11 +160,11 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-
 class RoundIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      constraints: BoxConstraints.tightFor(width: 56, height: 56),
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
       elevation: 10,
